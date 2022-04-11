@@ -1,34 +1,54 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">
+  Todo App
+  <p>-- App de lista de afazeres --</p>
+</h1>
 
-## Getting Started
+## Projeto realizado para testar as tecnologias:
+- [x] Next
+- [x] TailwindCSS
+- [x] Prisma
+- [x] PlanetScale
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
+## Para usar o projeto localmente:
+- Baixe o repositório
+```shell
+git clone https://github.com/FelipeJanotte/todo-list.git
+```
+- Execute o comando de instalação de dependências
+```shell
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Crie um projeto(database) no [PlanetScale](https://planetscale.com/)
+- - Sendo pela CLI:
+```shell
+# Criação do banco:
+pscale db create todo-list
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+# Criação de ramificação inicial:
+pscale branch create todo-list initial-setup
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+# Criação de ramificação para desenvolvimento:
+pscale branch create todo-list shadow
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+# Promover a branch main para ser a principal do projeto:
+pscale branch promote todo-list main
+```
 
-## Learn More
+- Iniciando o projeto: 
+```shell
+# Conectando com o banco: 
+pscale connect todo-list initial-setup --port 3309
+pscale connect todo-list shadow --port 3310
 
-To learn more about Next.js, take a look at the following resources:
+# Iniciando o frontend:
+npm run dev
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Abrir visualizador do banco via prisma:
+npx prisma studio
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```
+---
+<footer align="center">
+Você pode acessar em: https://todo-app-one-iota.vercel.app/?
+</footer>
