@@ -44,7 +44,8 @@ pscale connect todo-list shadow --port 3310
 # Iniciando o frontend:
 npm run dev
 
-# Abrir visualizador do banco via prisma:
+# Iniciando o projeto prisma:
+npx prisma db push
 npx prisma studio
 
 ```
