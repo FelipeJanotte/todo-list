@@ -33,6 +33,9 @@ pscale branch create todo-list shadow
 
 # Promover a branch main para ser a principal do projeto:
 pscale branch promote todo-list main
+
+# Exportando tabela via prisma
+npx prisma db push
 ```
 
 - Iniciando o projeto: 
@@ -45,7 +48,6 @@ pscale connect todo-list shadow --port 3310
 npm run dev
 
 # Iniciando o projeto prisma:
-npx prisma db push
 npx prisma studio
 
 ```
