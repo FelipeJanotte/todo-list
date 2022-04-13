@@ -50,6 +50,6 @@ npx prisma studio
 
 ```
 ---
-<footer align="center">
-Você pode acessar em: https://todo-app-one-iota.vercel.app/?
-</footer>
+<p align="center">
+Você pode acessar em: https://todo-app-one-iota.vercel.app/
+</p>
