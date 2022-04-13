@@ -17,3 +17,22 @@ export async function createTodo(description: string) {
     }
   })
 }
+
+export async function deleteTodo(id: number){
+  await prisma.todo.delete({
+    where:{
+      id
+    } 
+  })
+}
+
+export async function updateTodo(description: string, id: number){
+  await prisma.todo.update({
+    data:{
+      description
+    },
+    where:{
+      id
+    }
+  })
+}
